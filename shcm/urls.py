@@ -22,6 +22,9 @@ from . import views, Admin_Views, Recruiter_Views, Employer_Views
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
-                  path("", views.shcm_home, name="shcm home"),
-                  path('crm/', include('crm.urls'))
+                  path("", views.shcm_home, name="shcm_home"),
+                  path('crm/', include('crm.urls')),
+                  path('recruiter_login/', views.recruiter_login, name='recruiter_login'),
+                  path('admin_login/', views.admin_login, name='admin_login'),
+                  path('employer_login/', views.employer_login, name='employer_login')
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
